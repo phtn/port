@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "antd/es/button";
+import { Button } from "antd";
 import "antd/dist/antd.css";
 
 // mobx
@@ -10,9 +10,9 @@ const car = Car.create();
 const App: React.FC = () => {
   return (
     <div className='App'>
-      <Button type='primary' onClick={car.increment}>
-        phtn-01 {car.model} {car.year}
-      </Button>
+      phtn-01
+      <h1>Portfolio</h1>
+      <Button onClick={car.increment}>{car.year * 12}</Button>
     </div>
   );
 };
