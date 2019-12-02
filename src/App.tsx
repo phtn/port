@@ -1,20 +1,29 @@
 import React from "react";
-import { Button } from "antd";
+import { observer, inject } from 'mobx-react'
+import { Layout } from 'antd'
 import "antd/dist/antd.css";
 
 // mobx
-import { observer } from "mobx-react";
-import { Car } from "./models/prime";
-const car = Car.create();
+// import { observer } from "mobx-react";
+// ui-ctx
+// import { Mode } from 'models/ui-ctx'
+// components 
+import Navbar from "components/navbar";
+import Body from "components/body";
 
-const App: React.FC = () => {
+type UIProps = {
+  store?: any
+}
+
+const App: React.FC<UIProps> = props => {
+  const { store } = props
+  const { light, toggle } = store
   return (
-    <div className='App'>
-      phtn-01
-      <h1>Portfolio</h1>
-      <Button onClick={car.increment}>{car.year * 12}</Button>
-    </div>
+    <Layout>
+      <Navbar lightMode={light} toggle={toggle} />
+      <Body lightMode={light} />
+    </Layout>
   );
 };
 
-export default observer(App);
+export default inject('store')(observer(App))
