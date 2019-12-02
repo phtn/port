@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react'
 import './index.css';
 import App from './App';
-import { Mode } from './models/ui-ctx'
+import { UIStore } from './models/ui-ctx'
 import * as serviceWorker from './serviceWorker';
 
-const store = Mode.create()
+const store = UIStore.create()
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

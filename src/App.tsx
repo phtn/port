@@ -19,8 +19,8 @@ const App: React.FC<UIProps> = props => {
   const { store } = props
   const { light, toggle } = store
   return (
-    <Layout>
-      <Navbar lightMode={light} toggle={toggle} />
+    <Layout data-testid='main-layout'>
+      <Navbar data-testid='navbar' lightMode={light} toggle={toggle} />
       <Body lightMode={light} />
     </Layout>
   );

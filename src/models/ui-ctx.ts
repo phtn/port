@@ -1,6 +1,6 @@
 import { types } from "mobx-state-tree";
 
-const Mode = types
+const UIStore = types
   .model('ui', {
     light: types.optional(types.boolean, true)
   })
@@ -10,4 +10,4 @@ const Mode = types
     }
   }));
 
-export { Mode };
+export { UIStore };

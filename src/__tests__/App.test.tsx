@@ -1,10 +1,13 @@
 import React from "react";
+import { Provider } from 'mobx-react'
+import { UIStore } from '../models/ui-ctx'
 import { render } from "@testing-library/react";
-// import "@testing-library/jest-dom/extend-expect";
-
 import App from "../App";
 
-test("renders", () => {
-  const { getByText } = render(<App />);
-  expect(getByText("phtn-01"));
+const store = UIStore.create()
+
+test("it renders App component", () => {
+  const { getByTestId } = render(<Provider store={store}><App /></Provider>);
+  const layout = getByTestId('main-layout');
+  expect(layout);
 });

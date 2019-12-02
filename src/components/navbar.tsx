@@ -5,12 +5,11 @@ import { Layout, Col, Row, Button, Icon } from "antd";
 import MenuBar from "./menubar";
 const { Header } = Layout;
 const AnimatedHeader = animated(Header)
+
 type NavbarProps = {
   lightMode?: any,
   toggle?: any
 }
-
-
 
 const Navbar: FC<NavbarProps> = ({ lightMode, toggle }) => {
 
@@ -27,7 +26,7 @@ const Navbar: FC<NavbarProps> = ({ lightMode, toggle }) => {
 
 
   return (
-    <AnimatedHeader style={anim}>
+    <AnimatedHeader style={anim} data-testid='header'>
       <Row justify="center">
         <Col lg={3} xs={0} />
         <Col span={8}> <Icon component={Logo} /> <span style={{ color: lightMode ? '#333' : '#eee' }}>phtn458</span></Col>
