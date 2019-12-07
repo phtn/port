@@ -2,7 +2,7 @@ import { types } from 'mobx-state-tree';
 
 const UIStore = types
 	.model('ui', {
-		light: types.optional(types.boolean, false)
+		light: types.optional(types.boolean, true)
 	})
 	.actions(self => ({
 		toggle() {

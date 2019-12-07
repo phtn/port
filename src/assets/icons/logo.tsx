@@ -3,9 +3,10 @@ import React, { FC } from 'react';
 type LogoProps = {
 	lightMode: boolean;
 };
-
-const Logo: FC<LogoProps> = ({ lightMode }) => (
-	<svg
+ 
+const Logo: FC<LogoProps> = ({ lightMode }) => {
+	return (
+  <svg
 		width="3em"
 		height="60px"
 		fill={lightMode ? 'rgb(21, 32, 43)' : '#777'}
@@ -38,6 +39,6 @@ const Logo: FC<LogoProps> = ({ lightMode }) => (
     l4.543-18.171h38.789l4.542,18.171H232.063z M352.49,376.249H159.51l-21.281-78.029h235.542L352.49,376.249z M368.221,379.509
     l22.17-81.288h5.917l54.672,114.812L368.221,379.509z"
 		/>
-	</svg>
-);
+	</svg>)
+};
 export default Logo;

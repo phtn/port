@@ -5,5 +5,7 @@ import { render } from '@testing-library/react'
 test('navbar renders', () => {
   const { getByTestId } = render(<Navbar />)
   const header = getByTestId('header')
+
   expect(header)
 })
+

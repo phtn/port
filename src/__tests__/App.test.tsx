@@ -11,3 +11,14 @@ test("it renders App component", () => {
   const layout = getByTestId('main-layout');
   expect(layout);
 });
+
+test("light mode initialized as true", () => {
+  const { light } = store
+  expect(light).toBe(true)
+})
+
+test("toggle as a function", () => {
+  const { toggle } = store
+  expect(typeof toggle).toBe('function')
+})
+
