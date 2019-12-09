@@ -15,7 +15,7 @@ type NavbarProps = {
 
 const Navbar: FC<NavbarProps> = ({ lightMode, toggle }) => {
 	const anim = useSpring({
-		backgroundColor: lightMode ? '#0099e5' : 'rgba(21, 32, 43, 1)',
+		backgroundColor: lightMode ? 'rgba(0,153,229,1)' : 'rgba(21, 32, 43, 1)',
 		position: 'fixed',
 		zIndex: 1,
 		width: '100%',
