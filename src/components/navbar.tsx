@@ -39,7 +39,7 @@ const Navbar: FC<NavbarProps> = ({ lightMode, toggle }) => {
 				<Col lg={0} xs={1} />
 				<Col lg={3} xs={7}>
 					<div style={{ float: 'right' }}>
-						<Button type="link" onClick={toggle} data-testid='toggle-mode'>
+						<Button type="link" onClick={toggle} data-testid="toggle-mode">
 							<Icon component={Mode} />
 						</Button>
 					</div>

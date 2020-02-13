@@ -12,44 +12,53 @@ type BodyProps = {
 };
 
 const Body: FC<BodyProps> = ({ lightMode }) => {
-
 	const posterAnim = useSpring({
 		backgroundColor: lightMode ? '#eee' : 'rgba(21, 32, 43, 0.7 )',
 		delay: 150,
 		config: config.gentle
 	});
 
-
-
 	const Poster: FC = () => {
-
 		return (
 			<Content style={{ marginTop: 64 }}>
-				<AnimatedRow type='flex' justify='center' align='middle' style={Object.assign({}, posterAnim, { height: '600px' })}>
-					<Row type='flex' justify='center'>
+				<AnimatedRow
+					type="flex"
+					justify="center"
+					align="middle"
+					style={Object.assign({}, posterAnim, { height: '600px' })}
+				>
+					<Row type="flex" justify="center">
 						<Col lg={24} xs={24}>
-							<Text>Poster Body</Text>
-							{/* <C /> */}
+							<Text
+								type={lightMode ? 'secondary' : 'warning'}
+								style={{ color: 'white' }}
+							>
+								Poster Body
+							</Text>
+							<C />
 						</Col>
 					</Row>
 				</AnimatedRow>
 			</Content>
-		)
-	}
-
-
+		);
+	};
 
 	const centerPieceAnim = useSpring({
 		backgroundColor: lightMode ? '#eee' : 'rgba(21, 32, 43, 0.60 )',
 		delay: 300,
-		config: config.gentle
-	})
+		config: config.stiff
+	});
 
 	const CenterPiece: FC = () => {
 		return (
 			<Content style={{ marginTop: 0 }}>
-				<AnimatedRow type='flex' justify='center' align='middle' style={Object.assign({}, centerPieceAnim, { height: '600px' })}>
-					<Row type='flex' justify='center'>
+				<AnimatedRow
+					type="flex"
+					justify="center"
+					align="middle"
+					style={Object.assign({}, centerPieceAnim, { height: '600px' })}
+				>
+					<Row type="flex" justify="center">
 						<Col lg={24} xs={24}>
 							<Text>Center Piece</Text>
 							<C />
@@ -57,18 +66,26 @@ const Body: FC<BodyProps> = ({ lightMode }) => {
 					</Row>
 				</AnimatedRow>
 			</Content>
-		)
-	}
+		);
+	};
+
+	const cardAnim = useSpring({
+		width: lightMode ? 300 : 500
+		// config: config.stiff
+		// delay: 200
+	});
+
+	const CardAnimated = animated(Card);
 
 	const C: FC = () => (
 		<Card
-			style={{ width: 200 }}
-			cover={
-				<img
-					alt="example"
-					src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-				/>
-			}
+			style={{ width: lightMode ? 200 : 250 }}
+			// cover={
+			// 	<img
+			// 		alt="example"
+			// 		src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+			// 	/>
+			// }
 			actions={[
 				<Icon type="setting" key="setting" />,
 				<Icon type="edit" key="edit" />,
@@ -76,9 +93,9 @@ const Body: FC<BodyProps> = ({ lightMode }) => {
 			]}
 		>
 			<Meta
-				avatar={
-					<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-				}
+				// avatar={
+				// 	<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+				// }
 				title="Card title"
 				description="This is the description"
 			/>
@@ -94,7 +111,6 @@ const Body: FC<BodyProps> = ({ lightMode }) => {
 			<Row>
 				<CenterPiece />
 			</Row>
-
 		</div>
 	);
 };
